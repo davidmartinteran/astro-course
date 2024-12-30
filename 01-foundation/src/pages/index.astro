@@ -1,0 +1,21 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+const name = "David Martin";
+---
+
+<MainLayout title="Home">
+  <h1>Hello world {name}</h1><p>
+    Time: {new Date().toLocaleTimeString()}
+  </p>
+  <p>Momento actual: {new Date().toLocaleString()}</p>
+  <p id="actual">Momento actual real:</p>
+  <script>
+    const actualMoment = document.getElementById(
+      "actual"
+    ) as HTMLParagraphElement;
+    if (actualMoment) {
+      actualMoment.innerText = `Momento actual real: ${new Date().toLocaleString()}`;
+    }
+  </script>
+</MainLayout>
